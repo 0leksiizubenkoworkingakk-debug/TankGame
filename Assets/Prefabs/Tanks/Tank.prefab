@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6507708}
   - component: {fileID: 8261418}
   - component: {fileID: 2796553284793985243}
+  - component: {fileID: 7346318044053865841}
   m_Layer: 9
   m_Name: Tank
   m_TagString: Untagged
@@ -195,6 +196,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2561700a5b1e8054f8253102498e6f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TankController
+  moveSpeed: 6
+  rotationSpeed: 100
+  acceleration: 3
+  deceleration: 5
+  turnAcceleration: 6
+--- !u!114 &7346318044053865841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de219201944b754ebc15222cd87565a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TurrelAim
+  turretPivot: {fileID: 8757766852000940862}
+  turretKeyboardRotationSpeed: 75
 --- !u!1001 &1738840171618580762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -375,6 +395,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2231010766110983074, guid: c252d7d32ace3f64c827ab00cefa16ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2231010766110990468, guid: c252d7d32ace3f64c827ab00cefa16ae, type: 3}
       propertyPath: m_Name
       value: TankRenderers
@@ -384,6 +408,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c252d7d32ace3f64c827ab00cefa16ae, type: 3}
+--- !u!4 &8757766852000940862 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2231010766110843820, guid: c252d7d32ace3f64c827ab00cefa16ae, type: 3}
+  m_PrefabInstance: {fileID: 7457946645035933842}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8757766852000990630 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2231010766110795060, guid: c252d7d32ace3f64c827ab00cefa16ae, type: 3}
