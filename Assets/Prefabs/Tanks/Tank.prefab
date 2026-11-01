@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6507708}
   - component: {fileID: 8261418}
   - component: {fileID: 4765935127911770796}
+  - component: {fileID: 8606510071828427388}
   m_Layer: 9
   m_Name: Tank
   m_TagString: Untagged
@@ -195,6 +196,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bad6e3b3a084d64185b8810d1c9e0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TankController
+  moveSpeed: 6
+  rotationSpeed: 30
+  acceleration: 3
+  deceleration: 5
+  turnAcceleration: 6
+--- !u!114 &8606510071828427388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a867b627e649fdaddd012caa02825c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.TurrelAim
+  turretPivot: {fileID: 8757766852000940862}
+  turretKeyboardRotationSpeed: 75
+  turretMouseSensitivity: 0.5
 --- !u!1001 &1738840171618580762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -384,6 +405,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c252d7d32ace3f64c827ab00cefa16ae, type: 3}
+--- !u!4 &8757766852000940862 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2231010766110843820, guid: c252d7d32ace3f64c827ab00cefa16ae, type: 3}
+  m_PrefabInstance: {fileID: 7457946645035933842}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8757766852000990630 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2231010766110795060, guid: c252d7d32ace3f64c827ab00cefa16ae, type: 3}
