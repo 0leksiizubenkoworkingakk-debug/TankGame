@@ -49,6 +49,7 @@ public class TankController : MonoBehaviour
         
         Vector3 moveDirection = nextRotation * Vector3.forward;
         Vector3 nextPosition = tankRigidbody.position + moveDirection * currentMoveInput * moveSpeed * Time.fixedDeltaTime;
+        
         tankRigidbody.MoveRotation(nextRotation);
         tankRigidbody.MovePosition(nextPosition);
     }

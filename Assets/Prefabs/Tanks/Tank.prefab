@@ -215,7 +215,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.TurrelAim
   turretPivot: {fileID: 8757766852000940862}
   turretKeyboardRotationSpeed: 75
-  turretMouseSensitivity: 0.5
 --- !u!1001 &1738840171618580762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -395,6 +394,14 @@ PrefabInstance:
     - target: {fileID: 2231010766110795060, guid: c252d7d32ace3f64c827ab00cefa16ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2231010766110973300, guid: c252d7d32ace3f64c827ab00cefa16ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2231010766110983074, guid: c252d7d32ace3f64c827ab00cefa16ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2231010766110990468, guid: c252d7d32ace3f64c827ab00cefa16ae, type: 3}
       propertyPath: m_Name
