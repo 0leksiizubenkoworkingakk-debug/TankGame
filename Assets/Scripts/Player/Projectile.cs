@@ -9,7 +9,8 @@ namespace DefaultNamespace
     {
         [SerializeField] private ParticleSystem particles;
         [SerializeField] private MeshRenderer body;
-
+        [SerializeField] private AudioSource audioSource;
+        [SerializeField] private AudioClip shotSound;
         private Rigidbody projectileRigidbody;
         private int damage;
         private float lifetime;
@@ -25,6 +26,7 @@ namespace DefaultNamespace
 
         public void Initialize(int newDamage, float speed, float newLifetime, Collider newOwnerCollider)
         {
+            audioSource.PlayOneShot(shotSound);
             damage = newDamage;
             lifetime = newLifetime;
             ownerCollider = newOwnerCollider;
