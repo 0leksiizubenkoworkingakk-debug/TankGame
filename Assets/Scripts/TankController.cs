@@ -2,8 +2,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(Rigidbody))]
-public class TankController :
-MonoBehaviour
+public class TankController : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 6f;
@@ -20,20 +19,20 @@ MonoBehaviour
     private float targetTurnInput;
     private float currentMoveInput;
     private float currentTurnInput;
-
+  
     private void Awake()
     {
-        tankRigidbody = GetComponent<Rigidbody>();
+	    tankRigidbody = GetComponent<Rigidbody>();
     }
-    private void Update()
-    {
+	private void Update()
+	{
         targetMoveInput = Input.GetAxisRaw("Vertical");
         targetTurnInput = Input.GetAxisRaw("Horizontal");
-    }
+	}
     private void FixedUpdate()
     {
-        SmoothInput();
-        MoveTank();
+      SmoothInput();
+      MoveTank();
     }
     private void SmoothInput()
     {
@@ -47,9 +46,10 @@ MonoBehaviour
         float turn = currentTurnInput * rotationSpeed * Time.fixedDeltaTime;
         Quaternion rotationDelta = Quaternion.Euler(0f, turn, 0f);
         Quaternion nextRotation = tankRigidbody.rotation * rotationDelta;
-
+        
         Vector3 moveDirection = nextRotation * Vector3.forward;
         Vector3 nextPosition = tankRigidbody.position + moveDirection * currentMoveInput * moveSpeed * Time.fixedDeltaTime;
+        
         tankRigidbody.MoveRotation(nextRotation);
         tankRigidbody.MovePosition(nextPosition);
     }
