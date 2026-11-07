@@ -171,6 +171,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 193124054107720106, guid: fee785f5a150912428abe9706dcd8226, type: 3}
+      propertyPath: config
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e74f86b3b9216b4e80555fc49c3c46b, type: 2}
+    - target: {fileID: 193124054107720106, guid: fee785f5a150912428abe9706dcd8226, type: 3}
+      propertyPath: firePoint
+      value: 
+      objectReference: {fileID: 639545064}
+    - target: {fileID: 193124054107720106, guid: fee785f5a150912428abe9706dcd8226, type: 3}
+      propertyPath: ownerCollider
+      value: 
+      objectReference: {fileID: 1829051580}
     - target: {fileID: 7346318044053865841, guid: fee785f5a150912428abe9706dcd8226, type: 3}
       propertyPath: turretKeyboardRotationSpeed
       value: 75
@@ -180,6 +192,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fee785f5a150912428abe9706dcd8226, type: 3}
+--- !u!4 &639545064 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8276398450078943906, guid: fee785f5a150912428abe9706dcd8226, type: 3}
+  m_PrefabInstance: {fileID: 209937711}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &884945895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -527,6 +544,11 @@ MonoBehaviour:
 --- !u!4 &1829051575 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 446194, guid: fee785f5a150912428abe9706dcd8226, type: 3}
+  m_PrefabInstance: {fileID: 209937711}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1829051580 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 6507708, guid: fee785f5a150912428abe9706dcd8226, type: 3}
   m_PrefabInstance: {fileID: 209937711}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
