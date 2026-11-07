@@ -16,3 +16,4 @@ MonoBehaviour:
   projectileSpeed: 18
   fireCooldown: 0.7
   projectileLifetime: 5
+  projectilePrefab: {fileID: 4274763886846035300, guid: 008ecb1b70bec724fa2cd34255b0d8f8, type: 3}
