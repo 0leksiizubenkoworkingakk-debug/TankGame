@@ -16,7 +16,7 @@ namespace DefaultNamespace
         private Collider ownerCollider;
         private bool isInitialized;
 
-        private const float particleLifetime = 2;
+        private const float particleLifetime = 2F;
 
         private void Awake()
         {
@@ -61,7 +61,7 @@ namespace DefaultNamespace
             projectileRigidbody.isKinematic = true;
             particles.Play();
             yield return new WaitForSeconds(particleLifetime);
-            //Destroy(gameObject);
+            Destroy(gameObject);
            
         }
     }
