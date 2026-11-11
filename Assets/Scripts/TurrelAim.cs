@@ -20,7 +20,7 @@ namespace DefaultNamespace
         {
             if (turretPivot == null) return;
 
-            float keyboardInput = GetButtonAxis(KeyCode.Z, KeyCode.C);
+            float keyboardInput = GetButtonAxis(KeyCode.Q, KeyCode.E);
             float rotationAmount = keyboardInput * turretKeyboardRotationSpeed * Time.deltaTime;
 
             turretPivot.Rotate(0f, rotationAmount, 0f, Space.Self);

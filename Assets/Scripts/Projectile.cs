@@ -36,6 +36,7 @@ namespace DefaultNamespace
             }
             particles.Play();
             projectileRigidbody.AddForce(transform.forward * speed, ForceMode.Impulse);
+            GetComponent<AudioSource>().Play();
             //Destroy(gameObject, lifetime);
             StartCoroutine(DestroyProjectile(lifetime));
         }
@@ -61,7 +62,7 @@ namespace DefaultNamespace
             projectileRigidbody.isKinematic = true;
             particles.Play();
             yield return new WaitForSeconds(particleLifetime);
-            //Destroy(gameObject);
+            Destroy(gameObject);
            
         }
     }
