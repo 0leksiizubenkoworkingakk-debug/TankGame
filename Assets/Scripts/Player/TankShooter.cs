@@ -7,16 +7,17 @@ namespace DefaultNamespace
         [SerializeField] private TankConfig config;
         [SerializeField] private Transform firePoint;
         [SerializeField] private Collider ownerCollider;
+        [SerializeField] private bool usePlayerInput = true;
 
         private float nextFireTime;
 
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (usePlayerInput && Input.GetMouseButtonDown(0))
                 TryShoot();
         }
 
-        private void TryShoot()
+        public void TryShoot()
         {
             if (config == null || config.projectilePrefab == null || firePoint == null)
             {
