@@ -22,6 +22,7 @@ namespace DefaultNamespace
         private void Awake()
         {
             projectileRigidbody = GetComponent<Rigidbody>();
+            ownerCollider = GetComponent<Collider>();
         }
 
         public void Initialize(int newDamage, float speed, float newLifetime, Collider newOwnerCollider)
@@ -45,15 +46,20 @@ namespace DefaultNamespace
         private void OnCollisionEnter(Collision collision)
         {
             if (!isInitialized) return;
-
             if (collision.collider == ownerCollider) return;
 
-            if (collision.collider.TryGetComponent(out DamageableTarget target))
+            if (collision.collider.TryGetComponent(out IDamageable target))
             {
+
+                ////
+                ownerCollider.enabled = false;
+                projectileRigidbody.isKinematic = true;
+
+                ////
+
                 target.TakeDamage(damage);
+
             }
-            Debug.Log(collision.collider.name);
-            StartCoroutine(DestroyProjectile(0));
         }
 
         private IEnumerator DestroyProjectile(float delay)
