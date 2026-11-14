@@ -11,6 +11,7 @@ namespace DefaultNamespace
         [SerializeField] private MeshRenderer body;
         
         private Rigidbody projectileRigidbody;
+        private Collider collider;
         private int damage;
         private float lifetime;
         private Collider ownerCollider;
@@ -21,6 +22,9 @@ namespace DefaultNamespace
         private void Awake()
         {
             projectileRigidbody = GetComponent<Rigidbody>();
+            ///
+            collider = GetComponent<Collider>();
+            ///
         }
 
         public void Initialize(int newDamage, float speed, float newLifetime, Collider newOwnerCollider)
@@ -43,13 +47,22 @@ namespace DefaultNamespace
         private void OnCollisionEnter(Collision collision)
         {
             if (!isInitialized) return;
-
             if (collision.collider == ownerCollider) return;
 
-            if (collision.collider.TryGetComponent(out DamageableTarget target))
+            if (collision.collider.TryGetComponent(out IDamageable target))
             {
+                ////
+                collider.enabled = false;
+                projectileRigidbody.isKinematic = true;
+                ////
+                
                 target.TakeDamage(damage);
+                
             }
+            // IDamageable damageable = collision.collider.GetComponentInParent<IDamageable>();
+            //
+            // if (damageable != null) damageable.TakeDamage(damage);
+            
             Debug.Log(collision.collider.name);
             StartCoroutine(DestroyProjectile(0));
         }

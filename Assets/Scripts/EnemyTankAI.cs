@@ -80,8 +80,7 @@ public class EnemyTankAI : MonoBehaviour
 
     private void UpdateState(float distanceToPlayer)
     {
-        if (currentState == State.Patrol &&
-            distanceToPlayer <= detectionRange)
+        if (currentState == State.Patrol && distanceToPlayer <= detectionRange)
         {
             ChangeState(State.Chase);
         }
