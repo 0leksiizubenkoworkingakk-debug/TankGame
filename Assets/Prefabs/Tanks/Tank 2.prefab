@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 8222683015375103010}
   - component: {fileID: 6909243499920119963}
   - component: {fileID: 4031929143034794751}
+  - component: {fileID: 9024117139443613133}
+  - component: {fileID: 510818560297543870}
   m_Layer: 9
   m_Name: Tank 2
   m_TagString: Untagged
@@ -247,6 +249,38 @@ MonoBehaviour:
   shootAngle: 5
   aimHeight: 0.8
   pathUpdateInterval: 0.25
+--- !u!114 &9024117139443613133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca1b7232233ef4478a7f311e5598cd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TankHealth
+  maxHealth: 100
+  currentHealth: 0
+  healthImage: {fileID: 0}
+  healthGood: {r: 0, g: 0, b: 0, a: 0}
+  healthNormal: {r: 0, g: 0, b: 0, a: 0}
+  healthBad: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &510818560297543870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9072e4f11c58756419384c44db2a4dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.TankDeath
+  explosionPrefab: {fileID: 151086, guid: 6bc6d0dd8b8428e4ca316513f2cf13c6, type: 3}
+  destroyDelay: 0.1
 --- !u!1 &86736631978275592
 GameObject:
   m_ObjectHideFlags: 0

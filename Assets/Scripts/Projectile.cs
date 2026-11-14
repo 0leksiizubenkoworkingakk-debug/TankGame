@@ -9,7 +9,7 @@ namespace DefaultNamespace
     {
         [SerializeField] private ParticleSystem particles;
         [SerializeField] private MeshRenderer body;
-        
+        private Collider collider;
         private Rigidbody projectileRigidbody;
         private int damage;
         private float lifetime;
@@ -21,6 +21,7 @@ namespace DefaultNamespace
         private void Awake()
         {
             projectileRigidbody = GetComponent<Rigidbody>();
+            collider = GetComponent<Collider>();
         }
 
         public void Initialize(int newDamage, float speed, float newLifetime, Collider newOwnerCollider)
@@ -46,11 +47,19 @@ namespace DefaultNamespace
             if (!isInitialized) return;
 
             if (collision.collider == ownerCollider) return;
-
-            if (collision.collider.TryGetComponent(out DamageableTarget target))
-            {
+            if (collision.collider.TryGetComponent(out IDamageable target))
+               {
+    
+                ////
+                collider.enabled = false;
+                projectileRigidbody.isKinematic = true;
+    
+                ////
+    
                 target.TakeDamage(damage);
-            }
+    
+                }
+            
             Debug.Log(collision.collider.name);
             StartCoroutine(DestroyProjectile(0));
         }

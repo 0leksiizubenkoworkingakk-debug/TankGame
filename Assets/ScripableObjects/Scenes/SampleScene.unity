@@ -223,8 +223,51 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 173472, guid: 9542cb8015457e4469e309a5b670081a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 144361776}
+    - targetCorrespondingSourceObject: {fileID: 173472, guid: 9542cb8015457e4469e309a5b670081a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 144361775}
   m_SourcePrefab: {fileID: 100100000, guid: 9542cb8015457e4469e309a5b670081a, type: 3}
+--- !u!1 &144361774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 173472, guid: 9542cb8015457e4469e309a5b670081a, type: 3}
+  m_PrefabInstance: {fileID: 144361773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &144361775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144361774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9072e4f11c58756419384c44db2a4dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.TankDeath
+  explosionPrefab: {fileID: 151086, guid: 6bc6d0dd8b8428e4ca316513f2cf13c6, type: 3}
+  destroyDelay: 0.1
+--- !u!114 &144361776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144361774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca1b7232233ef4478a7f311e5598cd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TankHealth
+  maxHealth: 100
+  currentHealth: 0
+  healthImage: {fileID: 0}
+  healthGood: {r: 0, g: 0, b: 0, a: 0}
+  healthNormal: {r: 0, g: 0, b: 0, a: 0}
+  healthBad: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &262002781
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,7 +889,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 173472, guid: 076ac0451e250f44eac3409bb2c2c5dc, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 416712300}
+    - targetCorrespondingSourceObject: {fileID: 173472, guid: 076ac0451e250f44eac3409bb2c2c5dc, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 416712298}
+    - targetCorrespondingSourceObject: {fileID: 173472, guid: 076ac0451e250f44eac3409bb2c2c5dc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 416712299}
   m_SourcePrefab: {fileID: 100100000, guid: 076ac0451e250f44eac3409bb2c2c5dc, type: 3}
 --- !u!1 &416712296 stripped
 GameObject:
@@ -886,6 +935,38 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &416712299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416712296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca1b7232233ef4478a7f311e5598cd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TankHealth
+  maxHealth: 100
+  currentHealth: 0
+  healthImage: {fileID: 0}
+  healthGood: {r: 0, g: 0, b: 0, a: 0}
+  healthNormal: {r: 0, g: 0, b: 0, a: 0}
+  healthBad: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &416712300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416712296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9072e4f11c58756419384c44db2a4dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.TankDeath
+  explosionPrefab: {fileID: 151086, guid: 6bc6d0dd8b8428e4ca316513f2cf13c6, type: 3}
+  destroyDelay: 0.1
 --- !u!1001 &582162750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1140,6 +1221,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 9ed1e8a25f964bd4298944675e425a0d, type: 3}
       propertyPath: m_Name
       value: Shell
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9ed1e8a25f964bd4298944675e425a0d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9ed1e8a25f964bd4298944675e425a0d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3532,8 +3617,51 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 173472, guid: fee785f5a150912428abe9706dcd8226, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2002103671}
+    - targetCorrespondingSourceObject: {fileID: 173472, guid: fee785f5a150912428abe9706dcd8226, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2002103672}
   m_SourcePrefab: {fileID: 100100000, guid: fee785f5a150912428abe9706dcd8226, type: 3}
+--- !u!1 &2002103670 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 173472, guid: fee785f5a150912428abe9706dcd8226, type: 3}
+  m_PrefabInstance: {fileID: 2002103669}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2002103671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002103670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca1b7232233ef4478a7f311e5598cd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TankHealth
+  maxHealth: 100
+  currentHealth: 0
+  healthImage: {fileID: 0}
+  healthGood: {r: 0, g: 0, b: 0, a: 0}
+  healthNormal: {r: 0, g: 0, b: 0, a: 0}
+  healthBad: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &2002103672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002103670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9072e4f11c58756419384c44db2a4dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.TankDeath
+  explosionPrefab: {fileID: 0}
+  destroyDelay: 0.1
 --- !u!1 &2007846820
 GameObject:
   m_ObjectHideFlags: 0
