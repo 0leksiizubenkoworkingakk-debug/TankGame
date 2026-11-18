@@ -60,6 +60,7 @@ namespace DefaultNamespace
                 target.TakeDamage(damage);
 
             }
+            StartCoroutine(DestroyProjectile(0));
         }
 
         private IEnumerator DestroyProjectile(float delay)
@@ -70,7 +71,6 @@ namespace DefaultNamespace
             particles.Play();
             yield return new WaitForSeconds(particleLifetime);
             Destroy(gameObject);
-
         }
     }
 }
