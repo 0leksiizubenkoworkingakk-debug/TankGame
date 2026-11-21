@@ -28,7 +28,7 @@ namespace DefaultNamespace
         private void Start()
         {
             HealthChanged?.Invoke(currentHealth, maxHealth);
-            //UpdateUi();
+            UpdateUi();
         }
         
         public void TakeDamage(int damage)
@@ -39,9 +39,9 @@ namespace DefaultNamespace
             Debug.Log(currentHealth);
             HealthChanged?.Invoke(currentHealth, maxHealth);
             
-            //
-            //UpdateUi();
-            //
+            
+            UpdateUi();
+            
             if (currentHealth == 0)
                 Die();
         }
@@ -51,31 +51,31 @@ namespace DefaultNamespace
             if (IsDead || amount <= 0) return;
             currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
             HealthChanged?.Invoke(currentHealth, maxHealth);
-            //UpdateUi();
+            UpdateUi();
         }
         
         
-        // private void UpdateUi()
-        // {
-        //     if (healthImage)
-        //     {
-        //         float result = currentHealth / maxHealth;
-        //         if (result >= 0.6F)
-        //         {
-        //             healthImage.color = healthGood;
-        //         }
-        //         else if(result >= 0.3F)
-        //         {
-        //             healthImage.color = healthNormal;
-        //         }
-        //         else
-        //         {
-        //             healthImage.color = healthBad;
-        //         }
-        //         
-        //         healthImage.fillAmount = result;
-        //     }
-        // }
+        private void UpdateUi()
+        {
+            if (healthImage)
+            {
+                float result = currentHealth / maxHealth;
+                if (result >= 0.6F)
+                {
+                    healthImage.color = healthGood;
+                }
+                else if(result >= 0.3F)
+                {
+                    healthImage.color = healthNormal;
+                }
+                else
+                {
+                    healthImage.color = healthBad;
+                }
+                
+                healthImage.fillAmount = result;
+            }
+        }
         
         private void Die()
         {
