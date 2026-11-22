@@ -15,6 +15,9 @@ namespace DefaultNamespace
         [SerializeField] private Color healthGood;
         [SerializeField] private Color healthNormal;
         [SerializeField] private Color healthBad;
+        
+        [Header("Is my tank")]
+        [SerializeField] private bool IsPlayer;
         public bool IsDead { get; private set; }
         
         public event Action<float, float> HealthChanged;

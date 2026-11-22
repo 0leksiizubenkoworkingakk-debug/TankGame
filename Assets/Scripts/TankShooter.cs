@@ -26,9 +26,11 @@ namespace DefaultNamespace
                 Debug.LogWarning("TankShooter налаштований не повністю.");
                 return;
             }
-
+    
             if (Time.time < nextFireTime) return;
-
+            
+            Debug.Log("Soot!!!!!!!!!!!!!!!!");
+            
             Projectile projectile = Instantiate(config.projectilePrefab, firePoint.position, firePoint.rotation);
             projectile.Initialize(config.damage, config.projectileSpeed, config.projectileLifetime, ownerCollider);
             nextFireTime = Time.time + config.fireCooldown;
