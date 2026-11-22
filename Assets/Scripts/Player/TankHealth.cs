@@ -15,6 +15,9 @@ public class TankHealth : MonoBehaviour, IDamageable
     [SerializeField] private Color healthGood;
     [SerializeField] private Color healthNormal;
     [SerializeField] private Color healthBad;
+
+    [Header("Is my tank")]
+    [SerializeField] private bool IsPlayer;
     public bool IsDead { get; private set; }
 
     public event Action<float, float> HealthChanged;
@@ -29,12 +32,13 @@ public class TankHealth : MonoBehaviour, IDamageable
         HealthChanged?.Invoke(currentHealth, maxHealth);
 
         UpdateUi();
+        if (healthSlider == null) return;
         healthSlider.maxValue = maxHealth;
         healthSlider.value = currentHealth;
     }
     public void TakeDamage(int damage)
     {
-        if (IsDead || damage <= 0) return;
+        if (IsDead || damage <= 0 || healthSlider == null) return;
 
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxHealth);
         HealthChanged?.Invoke(currentHealth, maxHealth);
