@@ -7,14 +7,15 @@ public class TankHealth : MonoBehaviour, IDamageable
     [Header("Health")]
 [SerializeField, Min(1)] private float maxHealth = 100;
 [SerializeField] private float currentHealth;
-
+[Header("is my tank")]
+[Space]
+[SerializeField] private bool IsPlayer;
 
 [SerializeField] private Image healthImage;
 [SerializeField] private Color healthGood;
 [SerializeField] private Color healthNormal;
 [SerializeField] private Color healthBad;
 public bool IsDead { get; private set; }
-
 public event Action<float, float> HealthChanged;
 public event Action Died;
 private void Awake()
@@ -25,7 +26,29 @@ private void Start()
 {
     HealthChanged?.Invoke(currentHealth, maxHealth);
     
-//UpdateUi();
+UpdateUi();
+}
+private void UpdateUi()
+{
+    if (healthImage)
+    {
+        float result = currentHealth / maxHealth;
+        if (result >= 0.6F)
+        {
+            healthImage.color = healthGood;
+        }
+        else if(result >= 0.3F)
+        {
+            healthImage.color = healthNormal;
+        }
+        
+else
+        {
+            healthImage.color = healthBad;
+        }
+        
+        healthImage.fillAmount = result;
+    }
 }
 public void TakeDamage(int damage)
 {
@@ -36,7 +59,7 @@ public void TakeDamage(int damage)
     
     
 //
-    //UpdateUi();
+    UpdateUi();
     //
     if (currentHealth == 0)
         Die();
@@ -46,30 +69,9 @@ public void RestoreHealth(int amount)
     if (IsDead || amount <= 0) return;
     currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
     HealthChanged?.Invoke(currentHealth, maxHealth);
-    
-//UpdateUi();
+UpdateUi();
 }
-// private void UpdateUi()
-// {
-//     if (healthImage)
-//     {
-//         float result = currentHealth / maxHealth;
-//         if (result >= 0.6F)
-//         {
-//             healthImage.color = healthGood;
-//         }
-//         else if(result >= 0.3F)
-//         {
-//             healthImage.color = healthNormal;
-//         }
-//         else
-//         {
-//             healthImage.color = healthBad;
-//         }
-//         
-//         healthImage.fillAmount = result;
-//     }
-// }
+
 
 private void Die()
 {
